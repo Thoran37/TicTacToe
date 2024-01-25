@@ -7,8 +7,8 @@ import './App.css'
 
 export default function App() {
 
-  let [name1, setName1] = useState('')
-  let [name2, setName2] = useState('')
+  let [name1, setName1] = useState('Player-1')
+  let [name2, setName2] = useState('Player-2')
   let [pt, setPt] = useContext(PointsContext)
   let [show, setShow] = useState(true);
   return (
