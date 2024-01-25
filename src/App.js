@@ -28,9 +28,9 @@ export default function App() {
         </form>
         :
         <div>
-          <Board />
           <h3> {name1} <b>(X)</b> : {pt[0]} points</h3>
           <h3> {name2} <b>(O)</b> : {pt[1]} points</h3>
+          <Board />
         </div>
       }
     </div>
