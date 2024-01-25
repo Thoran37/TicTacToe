@@ -5,6 +5,10 @@ https://thoran37.github.io/TicTacToe
 # Images
 Checkout the crazy design of my tic tac toe game
 
-![image](https://github.com/Thoran37/TicTacToe/assets/132071612/e9042d09-e4fb-4287-981b-affd0a29578a)   ![image](https://github.com/Thoran37/TicTacToe/assets/132071612/7167f30c-23e8-42a2-89fa-47afebb38b26)
+![image](https://github.com/Thoran37/TicTacToe/assets/132071612/e9042d09-e4fb-4287-981b-affd0a29578a)   
 
-![image](https://github.com/Thoran37/TicTacToe/assets/132071612/a0f73e04-a707-47c9-a1a6-b9c0b798a6d0)   ![image](https://github.com/Thoran37/TicTacToe/assets/132071612/ede9dfd5-08c7-48aa-8c43-f8ec2247632b)
+![image](https://github.com/Thoran37/TicTacToe/assets/132071612/7167f30c-23e8-42a2-89fa-47afebb38b26)
+
+![image](https://github.com/Thoran37/TicTacToe/assets/132071612/a0f73e04-a707-47c9-a1a6-b9c0b798a6d0)   
+
+![image](https://github.com/Thoran37/TicTacToe/assets/132071612/ede9dfd5-08c7-48aa-8c43-f8ec2247632b)
