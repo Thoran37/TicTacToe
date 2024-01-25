@@ -8,8 +8,14 @@ export default function Board(props) {
   let initialValues = ['', '', '', '', '', '', '', '', '']
   let [cell, setCell] = useState(initialValues)
   let [turn, setTurn] = useState(0)
+  let [colour, setColour] = useState(['', '', '', '', '', '', '', '', ''])
   function add(cellno) {
     let present = turn === 1 ? 'X' : 'O'
+    if (present === 'X')
+      colour[cellno] = "#D4D925"
+    else
+      colour[cellno] = "#F58840"
+    console.log(cell[cellno])
     if (winner !== '');
     else if (cell[cellno] === '') {
       cell[cellno] = present
@@ -82,7 +88,7 @@ export default function Board(props) {
           cnt++;
       })
       if (cnt === 9)
-        setWinner('Tie Match')
+        setWinner('Tie Match - Fret Not!!')
     }
     checkTie()
     checkColumn()
@@ -96,27 +102,28 @@ export default function Board(props) {
     setCell(initialValues)
     setPt([a, b])
     setWinner('')
+    setColour(['', '', '', '', '', '', '', '', ''])
   }
 
   return (
     <>
       <div className='d-flex justify-content-center align-items-center'>
-        <div className='d-flex flex-wrap bg-info w-50 justify-content-center' style={{ height: "60vh" }}>
-          <div className="field border-start-0 border-top-0" onClick={() => add(0)}><h4>{cell[0]}</h4></div>
-          <div className="field border-top-0 border-start-0 border-end-0" onClick={() => add(1)}><h4>{cell[1]}</h4></div>
-          <div className="field border-end-0 border-top-0" onClick={() => add(2)}><h4>{cell[2]}</h4></div>
-          <div className="field border-start-0 border-top-0 border-bottom-0" onClick={() => add(3)}><h4>{cell[3]}</h4></div>
-          <div className="field border-0" onClick={() => add(4)}><h4>{cell[4]}</h4></div>
-          <div className="field border-end-0 border-top-0 border-bottom-0" onClick={() => add(5)}><h4>{cell[5]}</h4></div>
-          <div className="field border-start-0 border-bottom-0" onClick={() => add(6)}><h4>{cell[6]}</h4></div>
-          <div className="field border-bottom-0 border-end-0 border-start-0" onClick={() => add(7)}><h4>{cell[7]}</h4></div>
-          <div className="field border-bottom-0 border-end-0" onClick={() => add(8)}><h4>{cell[8]}</h4></div>
+        <div className='d-flex flex-wrap w-50 justify-content-center' style={{ height: "60vh", color: "#DA0C81" }}>
+          <div className="field border-start-0 border-top-0" onClick={() => add(0)}><h1 className='display-1' style={{ color: colour[0] }}>{cell[0]}</h1></div>
+          <div className="field border-top-0 border-start-0 border-end-0" onClick={() => add(1)}><h1 className='display-1' style={{ color: colour[1] }}>{cell[1]}</h1></div>
+          <div className="field border-end-0 border-top-0" onClick={() => add(2)}><h1 className='display-1' style={{ color: colour[2] }}>{cell[2]}</h1></div>
+          <div className="field border-start-0 border-top-0 border-bottom-0" onClick={() => add(3)}><h1 className='display-1' style={{ color: colour[3] }}>{cell[3]}</h1></div>
+          <div className="field border-0" onClick={() => add(4)}><h1 className='display-1' style={{ color: colour[4] }}>{cell[4]}</h1></div>
+          <div className="field border-end-0 border-top-0 border-bottom-0" onClick={() => add(5)}><h1 className='display-1' style={{ color: colour[5] }}>{cell[5]}</h1></div>
+          <div className="field border-start-0 border-bottom-0" onClick={() => add(6)}><h1 className='display-1' style={{ color: colour[6] }}>{cell[6]}</h1></div>
+          <div className="field border-bottom-0 border-end-0 border-start-0" onClick={() => add(7)}><h1 className='display-1' style={{ color: colour[7] }}>{cell[7]}</h1></div>
+          <div className="field border-bottom-0 border-end-0" onClick={() => add(8)}><h1 className='display-1' style={{ color: colour[8] }}>{cell[8]}</h1></div>
         </div>
-        {winner !== '' ? <div className='d-flex bg-success bg-opacity-75 position-absolute top-50 start-50 translate-middle p-4 flex-column w-25 h-25 align-items-center'>
-          <h2 className='text-light'>{winner}</h2>
+        {winner !== '' ? <div className='d-flex bg-opacity-75 position-absolute top-50 start-50 translate-middle p-4 flex-column w-25 h-25 align-items-center' style={{ backgroundColor: "#B9B4C7", color: "#016A70" }}>
+          <h2 className='text-center'>{winner}</h2>
           <div className='row'>
-            <button className='btn btn-secondary col m-2' onClick={() => clear()}>Play Again</button>
-            <button className='btn btn-secondary col m-2' onClick={() => reset()}>New Game</button>
+            <button className='btn col m-2' style={{ backgroundColor: "#D2DE32" }} onClick={() => clear()}>Play Again</button>
+            <button className='btn col m-2' style={{ backgroundColor: "#D2DE32" }} onClick={() => reset()}>New Game</button>
           </div>
         </div> : null}
       </div>
