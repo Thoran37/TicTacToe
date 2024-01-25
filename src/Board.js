@@ -32,11 +32,11 @@ export default function Board(props) {
         let res = cell[i] === cell[i + 1] && cell[i] === cell[i + 2] && cell[i] !== ''
         if (res === true) {
           if (cell[i] === 'X') {
-            setWinner('Player-1 Wins!!')
+            setWinner(props.name1 + ' Wins!!')
             a++;
           }
           else {
-            setWinner('Player-2 Wins!!')
+            setWinner(props.name2 + ' Wins!!')
             b++;
           }
         }
@@ -47,11 +47,11 @@ export default function Board(props) {
         let res = cell[i] === cell[i + 3] && cell[i] === cell[i + 6] && cell[i] !== ''
         if (res === true) {
           if (cell[i] === 'X') {
-            setWinner('Player-1 Wins!!')
+            setWinner(props.name1 + ' Wins!!')
             a++;
           }
           else {
-            setWinner('Player-2 Wins!!')
+            setWinner(props.name2 + ' Wins!!')
             b++;
           }
         }
@@ -62,21 +62,21 @@ export default function Board(props) {
       let res2 = cell[2] === cell[4] && cell[4] === cell[6] && cell[2] !== ''
       if (res1 === true) {
         if (cell[0] === 'X') {
-          setWinner('Player-1 Wins!!')
+          setWinner(props.name1 + ' Wins!!')
           a++;
         }
         else {
-          setWinner('Player-2 Wins!!')
+          setWinner(props.name2 + ' Wins!!')
           b++;
         }
       }
       else if (res2 === true) {
         if (cell[2] === 'X') {
-          setWinner('Player-1 Wins!!')
+          setWinner(props.name1 + ' Wins!!')
           a++;
         }
         else {
-          setWinner('Player-2 Wins!!')
+          setWinner(props.name2 + ' Wins!!')
           b++;
         }
       }
