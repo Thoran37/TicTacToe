@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+.field {
+  height: 33.33%;
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  /* color: whitesmoke;
+  font-family: "Bellefair", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 6rem; */
+}
