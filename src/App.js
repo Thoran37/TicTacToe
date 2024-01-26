@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react'
 import Board from './Board'
 import { PointsContext } from './PointsContext'
-import Enter from './Images/enter.png'
+import Enter from './Images/enter1.png'
 import TicTacToe from './Images/tictactoe.jpg'
 import './App.css'
 
 export default function App() {
 
-  let [name1, setName1] = useState('Player-1')
-  let [name2, setName2] = useState('Player-2')
+  let [name1, setName1] = useState('Player - 1')
+  let [name2, setName2] = useState('Player - 2')
   let [pt, setPt] = useContext(PointsContext)
   let [show, setShow] = useState(true);
   return (
@@ -27,7 +27,7 @@ export default function App() {
               <input type='text' className='form-control' onChange={(e) => { setName2(e.target.value) }} />
             </div>
             <div className='col d-flex align-self-end'>
-              <img src={Enter} alt='Imag' width='95px' onClick={() => setShow(false)} />
+              <img style={{ mixBlendMode: "color-dodge" }} src={Enter} alt='Imag' width='100px' onClick={() => setShow(false)} />
             </div>
           </form>
           <img className='d-block mx-auto mt-3' src={TicTacToe} width='600px' />
@@ -39,6 +39,6 @@ export default function App() {
           <Board name1={name1} name2={name2} />
         </div>
       }
-    </div>
+    </div >
   )
 }

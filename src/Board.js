@@ -9,8 +9,8 @@ export default function Board(props) {
   let [cell, setCell] = useState(initialValues)
   let [turn, setTurn] = useState(0)
   let [colour, setColour] = useState(['', '', '', '', '', '', '', '', ''])
+  let present = turn === 1 ? 'X' : 'O'
   function add(cellno) {
-    let present = turn === 1 ? 'X' : 'O'
     if (present === 'X')
       colour[cellno] = "#D4D925"
     else
@@ -119,6 +119,7 @@ export default function Board(props) {
           <div className="field border-bottom-0 border-end-0 border-start-0" onClick={() => add(7)}><h1 className='display-1' style={{ color: colour[7] }}>{cell[7]}</h1></div>
           <div className="field border-bottom-0 border-end-0" onClick={() => add(8)}><h1 className='display-1' style={{ color: colour[8] }}>{cell[8]}</h1></div>
         </div>
+        <h2 className='fixed-bottom text-center'>Now --> {present === 'X' ? props.name1 : props.name2}' s Turn</h2>
         {winner !== '' ? <div className='d-flex bg-opacity-75 position-absolute top-50 start-50 translate-middle p-4 flex-column w-25 h-25 align-items-center' style={{ backgroundColor: "#B9B4C7", color: "#016A70" }}>
           <h2 className='text-center'>{winner}</h2>
           <div className='row'>
