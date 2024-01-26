@@ -26,8 +26,9 @@ export default function App() {
               <label className='form-label'>Enter Player-2 Name <b>(O)</b></label>
               <input type='text' className='form-control' onChange={(e) => { setName2(e.target.value) }} />
             </div>
-            <div className='col d-flex align-self-end'>
-              <img style={{ mixBlendMode: "color-dodge" }} src={Enter} alt='Imag' width='100px' onClick={() => setShow(false)} />
+            <div className='col d-flex align-self-end cur' onClick={() => setShow(false)} >
+              <img style={{ mixBlendMode: "color-dodge" }} src={Enter} alt='Imag' width='100px' />
+              <h3 className='blink right ms-2'>Please click here to proceed</h3>
             </div>
           </form>
           <img className='d-block mx-auto mt-3' src={TicTacToe} width='600px' />
