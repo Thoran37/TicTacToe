@@ -125,7 +125,7 @@ export default function Board(props) {
 
   return (
     <>
-      <div className='d-flex justify-content-center align-items-center'>
+      <div className='d-flex justify-content-center align-items-center flex-column'>
         <div className='d-flex flex-wrap w-50 justify-content-center' style={{ height: "60vh", color: "#DA0C81" }}>
           <div className="field border-start-0 border-top-0" onClick={() => add(0)}><h1 className='display-1' style={{ color: colour[0] }}>{cell[0]}</h1></div>
           <div className="field border-top-0 border-start-0 border-end-0" onClick={() => add(1)}><h1 className='display-1' style={{ color: colour[1] }}>{cell[1]}</h1></div>
@@ -137,7 +137,7 @@ export default function Board(props) {
           <div className="field border-bottom-0 border-end-0 border-start-0" onClick={() => add(7)}><h1 className='display-1' style={{ color: colour[7] }}>{cell[7]}</h1></div>
           <div className="field border-bottom-0 border-end-0" onClick={() => add(8)}><h1 className='display-1' style={{ color: colour[8] }}>{cell[8]}</h1></div>
         </div>
-        <h2 className='fixed-bottom text-center'>Now --{'>'} {present === 'X' ? props.name1 : props.name2}' s Turn</h2>
+        <h2 className='text-center'>Now --{'>'} {present === 'X' ? props.name1 : props.name2}' s Turn</h2>
         {winner !== '' ?
           <>
             <div className={`position-absolute ${strike}`} style={{ backgroundColor: color }} />

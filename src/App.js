@@ -40,6 +40,7 @@ export default function App() {
           <Board name1={name1} name2={name2} />
         </div>
       }
+      <p className='text-center'>Copyright © Muvvala Thoran Chandra</p>
     </div >
   )
 }
