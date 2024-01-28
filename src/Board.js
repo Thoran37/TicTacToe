@@ -10,6 +10,7 @@ export default function Board(props) {
   let [turn, setTurn] = useState(0)
   let [colour, setColour] = useState(['', '', '', '', '', '', '', '', ''])
   let present = turn === 1 ? 'X' : 'O'
+  let [strike, setStrike] = useState('')
   function add(cellno) {
     if (present === 'X')
       colour[cellno] = "#D4D925"
@@ -26,6 +27,7 @@ export default function Board(props) {
   }
   let [winner, setWinner] = useState('')
   let a = pt[0], b = pt[1]
+  let [color, setColor] = useState('')
   useEffect(() => {
     function checkRow() {
       for (let i = 0; i < 7; i += 3) {
@@ -33,10 +35,14 @@ export default function Board(props) {
         if (res === true) {
           if (cell[i] === 'X') {
             setWinner(props.name1 + ' Wins!!')
+            setStrike(`strike-row-${i}`)
+            setColor('#D4D925')
             a++;
           }
           else {
             setWinner(props.name2 + ' Wins!!')
+            setColor('#F58840')
+            setStrike(`strike-row-${i}`)
             b++;
           }
         }
@@ -48,10 +54,14 @@ export default function Board(props) {
         if (res === true) {
           if (cell[i] === 'X') {
             setWinner(props.name1 + ' Wins!!')
+            setStrike(`strike-column-${i}`)
+            setColor('#D4D925')
             a++;
           }
           else {
             setWinner(props.name2 + ' Wins!!')
+            setColor('#F58840')
+            setStrike(`strike-column-${i}`)
             b++;
           }
         }
@@ -63,20 +73,28 @@ export default function Board(props) {
       if (res1 === true) {
         if (cell[0] === 'X') {
           setWinner(props.name1 + ' Wins!!')
+          setColor('#D4D925')
+          setStrike('strike-diagonal-1')
           a++;
         }
         else {
           setWinner(props.name2 + ' Wins!!')
+          setColor('#F58840')
+          setStrike('strike-diagonal-1')
           b++;
         }
       }
       else if (res2 === true) {
         if (cell[2] === 'X') {
           setWinner(props.name1 + ' Wins!!')
+          setColor('#D4D925')
+          setStrike('strike-diagonal-2')
           a++;
         }
         else {
           setWinner(props.name2 + ' Wins!!')
+          setColor('#F58840')
+          setStrike('strike-diagonal-2')
           b++;
         }
       }
@@ -120,13 +138,18 @@ export default function Board(props) {
           <div className="field border-bottom-0 border-end-0" onClick={() => add(8)}><h1 className='display-1' style={{ color: colour[8] }}>{cell[8]}</h1></div>
         </div>
         <h2 className='fixed-bottom text-center'>Now --{'>'} {present === 'X' ? props.name1 : props.name2}' s Turn</h2>
-        {winner !== '' ? <div className='d-flex bg-opacity-75 position-absolute top-50 start-50 translate-middle p-4 flex-column w-25 h-25 align-items-center' style={{ backgroundColor: "#B9B4C7", color: "#016A70" }}>
-          <h2 className='text-center'>{winner}</h2>
-          <div className='row'>
-            <button className='btn col m-2' style={{ backgroundColor: "#D2DE32" }} onClick={() => clear()}>Play Again</button>
-            <button className='btn col m-2' style={{ backgroundColor: "#D2DE32" }} onClick={() => reset()}>New Game</button>
-          </div>
-        </div> : null}
+        {winner !== '' ?
+          <>
+            <div className={`position-absolute ${strike}`} style={{ backgroundColor: color }} />
+            <div className='d-flex bg-opacity-75 position-absolute top-50 start-50 translate-middle p-4 flex-column w-25 h-25 align-items-center' style={{ backgroundColor: "#B9B4C7", color: "#016A70" }}>
+              <h2 className='text-center'>{winner}</h2>
+              <div className='row'>
+                <button className='btn col m-2' style={{ backgroundColor: color }} onClick={() => clear()}>Play Again</button>
+                <button className='btn col m-2' style={{ backgroundColor: color }} onClick={() => reset()}>New Game</button>
+              </div>
+            </div>
+          </> :
+          null}
       </div>
     </>
   )
