@@ -137,7 +137,7 @@ export default function Board(props) {
           <div className="field border-bottom-0 border-end-0 border-start-0" onClick={() => add(7)}><h1 className='display-1' style={{ color: colour[7] }}>{cell[7]}</h1></div>
           <div className="field border-bottom-0 border-end-0" onClick={() => add(8)}><h1 className='display-1' style={{ color: colour[8] }}>{cell[8]}</h1></div>
         </div>
-        <h2 className='fixed-bottom text-center'>Now --{'>'} {present === 'X' ? props.name1 : props.name2}' s Turn</h2>
+        <h2 className='text-center'>Now --{'>'} {present === 'X' ? props.name1 : props.name2}' s Turn</h2>
         {winner !== '' ?
           <>
             <div className={`position-absolute ${strike}`} style={{ backgroundColor: color }} />
