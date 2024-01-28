@@ -140,7 +140,7 @@ export default function Board(props) {
         <h2 className='text-center'>Now --{'>'} {present === 'X' ? props.name1 : props.name2}' s Turn</h2>
         {winner !== '' ?
           <>
-            <div className={`position-absolute ${strike}`} style={{ backgroundColor: color }} />
+            {/* <div className={`position-absolute ${strike}`} style={{ backgroundColor: color }} /> */}
             <div className='d-flex bg-opacity-75 position-absolute top-50 start-50 translate-middle p-4 flex-column w-25 h-25 align-items-center' style={{ backgroundColor: "#B9B4C7", color: "#016A70" }}>
               <h2 className='text-center'>{winner}</h2>
               <div className='row'>

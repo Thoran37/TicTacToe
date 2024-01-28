@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-/* .strike-row-0 {
+.strike-row-0 {
   width: 500px;
   height: 3px;
   top: 36%;
@@ -69,4 +69,4 @@
   height: 600px;
   left: 51%;
   transform: rotate(-55deg);
-} */
+}
